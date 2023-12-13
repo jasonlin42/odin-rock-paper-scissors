@@ -20,10 +20,32 @@
                 } else if (computerSelection == 2) {
                     return "scissors";
                 }
-
             }
 
-            console.log(getComputerChoice());
+            function playRound(playerSelection, computerSelection) {
+                playerSelection = prompt("Rock, Paper, Scissors?");
+                playerSelection = playerSelection.toLowerCase();
+                
+                computerSelection = getComputerChoice();
+
+                if (playerSelection == computerSelection) {
+                    return "Tie!", playRound();
+                } else if (playerSelection == "rock") {
+                    if (computerSelection == "scissors") {
+                        return "rock beats scissors";
+                    } else {return "you lose, paper beats rock"}
+                } else if (playerSelection == "paper") {
+                    if (computerSelection == "rock") {
+                        return "paper beats rock";
+                    } else {return "you lose, scissors beat paper"}
+                } else if (playerSelection == "scissors") {
+                    if (computerSelection == "paper") {
+                        return "scissors beat paper";
+                    } else {return "you lose, rock beats scissors"}
+                }
+            }
+
+            console.log(playRound());
 
         </script>
     </body>

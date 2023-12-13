@@ -32,17 +32,21 @@
                     return "Tie!", playRound();
                 } else if (playerSelection == "rock") {
                     if (computerSelection == "scissors") {
-                        return "rock beats scissors", gameCount++;
-                    } else {return "you lose, paper beats rock", gameCount++}
+                        return playerSelection;
+                    } else {return computerSelection}
                 } else if (playerSelection == "paper") {
                     if (computerSelection == "rock") {
-                        return "paper beats rock", gameCount++;
-                    } else {return "you lose, scissors beat paper", gameCount++}
+                        return playerSelection;
+                    } else {return computerSelection}
                 } else if (playerSelection == "scissors") {
                     if (computerSelection == "paper") {
-                        return "scissors beat paper", gameCount++;
-                    } else {return "you lose, rock beats scissors", gameCount++}
+                        return playerSelection;
+                    } else {return computerSelection}
                 }
+            }
+
+            function announcer() {
+
             }
 
             function game() {
@@ -50,11 +54,10 @@
                 
                 while (gameCount < 5) {
                     playRound();
-                    console.log(gameCount);
                 }
             }
 
-            console.log(game());
+            console.log(playRound());
 
         </script>
     </body>

@@ -9,6 +9,9 @@
 
     <body>
         <script>
+
+            let playerWin = 0;
+            let computerWin = 0;
             
             function getComputerChoice() {
                 let computerSelection = Math.floor(Math.random() * 3);
@@ -32,32 +35,27 @@
                     return "Tie!", playRound();
                 } else if (playerSelection == "rock") {
                     if (computerSelection == "scissors") {
-                        return playerSelection;
-                    } else {return computerSelection}
+                        return ++playerWin;
+                    } else {return ++computerWin}
                 } else if (playerSelection == "paper") {
                     if (computerSelection == "rock") {
-                        return playerSelection;
-                    } else {return computerSelection}
+                        return ++playerWin;
+                    } else {return ++computerWin}
                 } else if (playerSelection == "scissors") {
                     if (computerSelection == "paper") {
-                        return playerSelection;
-                    } else {return computerSelection}
+                        return ++playerWin;
+                    } else {return ++computerWin}
                 }
-            }
-
-            function announcer() {
-                playRound
             }
 
             function game() {
-                let gameCount = 0;
-                
-                while (gameCount < 5) {
+                while (playerWin < 5 && computerWin < 5) {
                     playRound();
+                    console.log("player = " + playerWin + " computer = " + computerWin)
                 }
             }
 
-            console.log(announcer());
+            console.log(game());
 
         </script>
     </body>
